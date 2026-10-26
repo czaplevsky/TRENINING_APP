@@ -2082,6 +2082,7 @@ function compactPlanTxt(type, rx){
   return '—';
 }
 function compactDoneTxt(type, rx, exEntry){
+  rx = rx || {}; // fix 26.10: wpis przy ćwiczeniu bez planu w tym tygodniu wywracał eksport
   if (type==='strength'){
     if (checkAsPlan('strength', rx, exEntry)) return '= plan';
     var groups=[];
